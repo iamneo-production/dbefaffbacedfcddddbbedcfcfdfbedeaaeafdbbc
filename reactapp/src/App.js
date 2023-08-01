@@ -1,6 +1,6 @@
 
 import './App.css';
-
+import Button from './components/Button/button';
 const DUMMY_QUESTIONS=[
   {
     question:"Who is the father of our nation?",
@@ -39,6 +39,7 @@ function App() {
   return (
     <div className="App">
       <h1>Quizz App</h1>
+     <Button/>
     </div>
   );
 }
