@@ -1,6 +1,7 @@
 import './App.css';
 import React , {useState} from 'react';
 import Card from "./components/UI/Card/Card"
+import Button from './components/UI/Button/Button';
 
 function App() {
   const [showQuestion ,setShowQuestions] = useState(false);
@@ -80,7 +81,7 @@ function App() {
               />
             ))}
           </div>
-            <button onClick={showResults} className='ResultBtn'>Show Results</button>
+            <Button onClick={showResults} className='ResultBtn'>Show Results</Button>
           </>
         )
         :
