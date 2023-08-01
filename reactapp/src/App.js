@@ -54,7 +54,7 @@ function App() {
   const handleCorrectAnswerMarkUpdate = (isCorrect) => {
     console.log(isCorrect);
     if(isCorrect){
-      setquestionsCorrect(questionsCorrect + 1);
+      setQuestionsCorrect(questionsCorrect + 1);
     }
     setQuestionsAnswered(questionsAnswered + 1);
   }
