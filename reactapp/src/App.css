@@ -2,37 +2,55 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container{
+    /* border: 2px solid black; */
+    margin: 2px;
+    padding: 4px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    /* flex-direction: column; */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.Startbtn{
+    font-size: medium;
+    width: 450px;
+    height: 40px;
+    background-color: #f5a081;
+    font-weight: bold;
+    border:0.5px solid black;
+    margin: 40px;
+    border-radius: 4px;
+
+}
+.Startbtn:hover{
+  cursor: pointer;
+}
+.ResultBtn{
+    font-size: medium;
+    width: 120px;
+    height: 40px;
+    background-color: hsl(112.72deg 85.29% 32.11% / 97%);
+    border: 0.5px solid black;
+    color: white;
+    font-weight: bold;
+    border-radius: 4px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.ResultBtn:hover{
+    cursor: pointer;
+}
+
+.ResultDiv{
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  text-align: center;
+  display: table;
+  margin: 0 auto;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.ResultText{
+  background-color: #e67248;
+  width: 800px;
+  height: 3rem;
+  border-radius: 8px;
 }
