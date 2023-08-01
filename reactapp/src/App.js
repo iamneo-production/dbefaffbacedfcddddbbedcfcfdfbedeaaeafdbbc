@@ -54,8 +54,8 @@ function App() {
   return (
     <div className="App">
       <h1>Quizz App</h1>
-       {!quizStarted ? (
-        <Button onClick={handleStartQuiz}>Start Quiz</Button>
+       { !quizStarted ? (
+        <button onClick={handleStartQuiz}>Start Quiz</button>
       ) : (
         <>
         
