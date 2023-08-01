@@ -1,23 +1,28 @@
 import logo from './logo.svg';
 import './App.css';
 
+const DUMMY_QUESTIONS=[
+  {
+    question:"Who is the father of our nation?",
+    option1:"Mahatma Gandhi",
+    option2:"Jawaharlal Nehru",
+    option3:"Donald Trump",
+    option4:"Barrack Obama",
+    correct:1,
+  },
+  {
+    question:"Who is the father of our nation?",
+    option1:"Mahatma Gandhi",
+    option2:"Jawaharlal Nehru",
+    option3:"Donald Trump",
+    option4:"Barrack Obama",
+    correct:1,
+  }
+]
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Quizz App</h1>
     </div>
   );
 }
