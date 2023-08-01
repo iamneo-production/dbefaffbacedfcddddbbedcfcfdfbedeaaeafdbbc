@@ -1,7 +1,23 @@
-import logo from './logo.svg';
+
 import './App.css';
 
 const DUMMY_QUESTIONS=[
+  {
+    question:"Who is the father of our nation?",
+    option1:"Mahatma Gandhi",
+    option2:"Jawaharlal Nehru",
+    option3:"Donald Trump",
+    option4:"Barrack Obama",
+    correct:1,
+  },
+  {
+    question:"Who is the father of our nation?",
+    option1:"Mahatma Gandhi",
+    option2:"Jawaharlal Nehru",
+    option3:"Donald Trump",
+    option4:"Barrack Obama",
+    correct:1,
+  },
   {
     question:"Who is the father of our nation?",
     option1:"Mahatma Gandhi",
