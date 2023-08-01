@@ -1,6 +1,7 @@
 
 import './App.css';
-import Button from './components/Button/button';
+import Button from './components/Button/Button';
+import { useState } from 'react';
 const DUMMY_QUESTIONS=[
   {
     question:"Who is the father of our nation?",
@@ -36,10 +37,31 @@ const DUMMY_QUESTIONS=[
   }
 ]
 function App() {
+  const [quizStarted, setQuizStarted] = useState(false);
+
+  const handleStartQuiz = () => {
+    setQuizStarted(true);
+  };
+
+  const handleAnswerQuestion = () => {
+    // Handle question answering logic here
+  };
+
+  const handleShowResults = () => {
+    // Handle showing quiz results logic here
+  };
+
   return (
     <div className="App">
       <h1>Quizz App</h1>
-     <Button/>
+       {!quizStarted ? (
+        <Button onClick={handleStartQuiz}>Start Quiz</Button>
+      ) : (
+        <>
+        
+          <Button onClick={handleShowResults}>Show Results</Button>
+        </>
+      )}
     </div>
   );
 }

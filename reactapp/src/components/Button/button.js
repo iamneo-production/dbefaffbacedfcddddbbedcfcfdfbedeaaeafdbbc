@@ -6,4 +6,4 @@ function Button() {
   )
 }
 
-export default button
+export default Butto
