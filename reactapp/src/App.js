@@ -1,67 +1,96 @@
-
 import './App.css';
-import Button from './components/Button/Button';
-import { useState } from 'react';
-const DUMMY_QUESTIONS=[
-  {
-    question:"Who is the father of our nation?",
-    option1:"Mahatma Gandhi",
-    option2:"Jawaharlal Nehru",
-    option3:"Donald Trump",
-    option4:"Barrack Obama",
-    correct:1,
-  },
-  {
-    question:"Who is the father of our nation?",
-    option1:"Mahatma Gandhi",
-    option2:"Jawaharlal Nehru",
-    option3:"Donald Trump",
-    option4:"Barrack Obama",
-    correct:1,
-  },
-  {
-    question:"Who is the father of our nation?",
-    option1:"Mahatma Gandhi",
-    option2:"Jawaharlal Nehru",
-    option3:"Donald Trump",
-    option4:"Barrack Obama",
-    correct:1,
-  },
-  {
-    question:"Who is the father of our nation?",
-    option1:"Mahatma Gandhi",
-    option2:"Jawaharlal Nehru",
-    option3:"Donald Trump",
-    option4:"Barrack Obama",
-    correct:1,
-  }
-]
+import React , {useState} from 'react';
+import Card from "./components/UI/Card/Card"
+
 function App() {
-  const [quizStarted, setQuizStarted] = useState(false);
-
-  const handleStartQuiz = () => {
-    setQuizStarted(true);
-  };
-
-  const handleAnswerQuestion = () => {
-    // Handle question answering logic here
-  };
-
-  const handleShowResults = () => {
-    // Handle showing quiz results logic here
-  };
-
+  const [showQuestion ,setShowQuestions] = useState(false);
+  const [questionsCorrect, setquestionsCorrect] = useState(0);
+  const [showQuiz, setShowQuiz] = useState(false);
+  
+  function handleStartQuiz(){
+    setShowQuestions(true);
+    setShowQuiz(false);
+  }
+  const questions = [
+    {
+      quesId: 1,
+      ques: 'What color is the sky?',
+      Options: {
+        option1: 'Blue',
+        option2: 'Red',
+        option3: 'Yellow',
+        option4: 'Green',
+      },
+      answer: 'Blue',
+    },
+    {
+      quesId: 2,
+      ques: 'What color is are the leaves ?',
+      Options: {
+        option1: 'Blue',
+        option2: 'Red',
+        option3: 'Yellow',
+        option4: 'Green',
+      },
+      answer: 'Green',
+    },
+    {
+      quesId: 3,
+      ques: 'What color is the sun?',
+      Options: {
+        option1: 'Blue',
+        option2: 'Red',
+        option3: 'Yellow',
+        option4: 'Green',
+      },
+      answer: 'Yellow',
+    },
+  ]
+  const handleCorrectAnswerMarkUpdate = (isCorrect) => {
+    console.log(isCorrect);
+    if(isCorrect){
+      setquestionsCorrect(questionsCorrect + 1);
+    }
+  }
+  const showResults = () => {
+    console.log("Show Results", questionsCorrect);
+    setShowQuiz(true);
+  }
   return (
     <div className="App">
       <h1>Quizz App</h1>
-       { !quizStarted ? (
-        <button onClick={handleStartQuiz}>Start Quiz</button>
-      ) : (
-        <>
-        
-          <Button onClick={handleShowResults}>Show Results</Button>
-        </>
-      )}
+      {
+        !showQuestion ? 
+        (
+          <button className='Startbtn' onClick={handleStartQuiz}>Start Quiz</button>
+        )
+        :
+        showQuiz===false?
+        (
+          <>
+          <div className="container">
+            {questions.map((item) => (
+              <Card 
+                key={item.quesId}
+                question={item.ques}
+                correctAnswerMarkUpdate={handleCorrectAnswerMarkUpdate}
+                attempt={"ka"}
+                options={item.Options}
+                answer={item.answer}
+              />
+            ))}
+          </div>
+            <button onClick={showResults} className='ResultBtn'>Show Results</button>
+          </>
+        )
+        :
+        (
+          <div className='ResultDiv'>
+            <h1 className='ResultText'>You have answered {questionsCorrect} / {questions.length} Correctly</h1>
+            <button className='Startbtn' onClick={handleStartQuiz}>Start Quiz</button>
+          </div>  
+        )
+      }
     </div>
   );
 }
