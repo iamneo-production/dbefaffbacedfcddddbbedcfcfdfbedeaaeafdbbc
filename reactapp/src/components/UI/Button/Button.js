@@ -1,8 +1,8 @@
 import React from 'react';
 
-function Button({onClick,children}) {
+function Button({children}) {
   return (
-    <button onClick={onClick}>{children}</button>
+    <button>{children}</button>
   )
 }
 
