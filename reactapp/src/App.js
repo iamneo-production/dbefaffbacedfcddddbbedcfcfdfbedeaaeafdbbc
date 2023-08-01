@@ -4,13 +4,17 @@ import Card from "./components/UI/Card/Card"
 import Button from './components/UI/Button/Button';
 
 function App() {
-  const [showQuestion ,setShowQuestions] = useState(false);
-  const [questionsCorrect, setquestionsCorrect] = useState(0);
+  const [showQuestion, setShowQuestions] = useState(false);
+  const [questionsCorrect, setQuestionsCorrect] = useState(0);
   const [showQuiz, setShowQuiz] = useState(false);
+  const [questionsAnswered, setQuestionsAnswered] = useState(0); // Track the number of questions answered
   
   function handleStartQuiz(){
+ 
     setShowQuestions(true);
     setShowQuiz(false);
+    setQuestionsCorrect(0); // Reset the number of correct answers
+    setQuestionsAnswered(0); // Reset the number of questions answered
   }
   const questions = [
     {
@@ -52,6 +56,7 @@ function App() {
     if(isCorrect){
       setquestionsCorrect(questionsCorrect + 1);
     }
+    setQuestionsAnswered(questionsAnswered + 1);
   }
   const showResults = () => {
     console.log("Show Results", questionsCorrect);
@@ -81,7 +86,9 @@ function App() {
               />
             ))}
           </div>
-            <Button onClick={showResults} className='ResultBtn'>Show Results</Button>
+          {questionsAnswered === questions.length && 
+                  <Button onClick={showResults} className='ResultBtn'>Show Results</Button>
+            }
           </>
         )
         :
